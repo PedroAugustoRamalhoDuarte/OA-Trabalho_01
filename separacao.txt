@@ -1,0 +1,5 @@
+Indice Primario
+Indice Secundario
+Ordenação(Ordenação Boa)
+Incluir/Excluir/Alterar Registros
+Intercalação
