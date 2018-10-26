@@ -6,14 +6,14 @@ LDIR =../lib
 
 LIBS=-lm
 
-_DEPS = 
+_DEPS = header.hpp
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = 
+_OBJ = intercalao.o teste_inter.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-$(ODIR)/%.o: %.c $(DEPS)
+$(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 teste: $(OBJ)
