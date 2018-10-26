@@ -1,15 +1,18 @@
 #ifndef HEADER_H
 #define HEADER_H
+#include <string>
 
 class Registro{
-	string nome;
-	char turma;
-	char curso;
-	int op;
-	int matric;
-}
+	public:
+		char* nome;
+		char turma;
+		char curso;
+		int op;
+		int matric;
+		int chave;
+};
 
-int merge(string arquivo1, string arquivo2);
+int merge(char*  arquivo1, char*  arquivo2);
 
 void Ler_lista(FILE* arq, Registro reg);
 

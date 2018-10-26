@@ -9,7 +9,7 @@ LIBS=-lm
 _DEPS = header.hpp
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = intercalao.o teste_inter.o
+_OBJ = intercalacao.o teste_inter.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
