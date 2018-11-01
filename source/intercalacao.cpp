@@ -5,10 +5,9 @@
 
 void escreve_arquivo(FILE* arq, Registro* reg){
 	//Escrever Registro
-	fprintf(arq, "%s\n", reg->info);
+	fprintf(arq, "%d %s %d %s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
 }
 void ler_linha_arquivo(FILE* arq, Registro *reg){
-	int i;
 	char aux[30];
 
 	/* Captura a matricula */
@@ -17,9 +16,8 @@ void ler_linha_arquivo(FILE* arq, Registro *reg){
     printf("%d\n", reg->matric);
     fgetc(arq); /* Pegar o espaço que sobra */
 
-    /* Captura o nome */
-    fscanf(arq, "%[^0-9]s", aux);
-    reg->nome = aux;
+    /* Captura o nome  */
+    fscanf(arq, "%[^0-9]s", reg->nome);
     printf("%s\n", reg->nome);
 
 	/* Captura o OP */
@@ -28,17 +26,17 @@ void ler_linha_arquivo(FILE* arq, Registro *reg){
 	printf("%d\n", reg->op);
   	fscanf(arq, "%[^A-Z]s", aux); /* Pegar o espaço que sobra */
   	
-  	/* Captura o Curso */
-  	fscanf(arq, "%[A-Z]s", aux);
-  	reg->curso = aux;
+  	/* Captura o Curso  */
+  	fscanf(arq, "%[A-Z]s", reg->curso);
   	printf("%s\n", reg->curso);
   	fscanf(arq, "%[^A-Z]s", aux); /* Pegar o espaço que sobra */
   	
-  	/* Captura a turma*/
-  	fscanf(arq, "%[^\n]s", aux);
-  	reg->turma = aux;
-  	printf("%s\n", reg->turma);
-  	fgetc(arq);
+  	/* Captura a turma */
+  	reg->turma = fgetc(arq);
+  	printf("%c\n", reg->turma);
+
+  	/* Definindo a chave */
+  	reg->chave = reg->matric;
 }
 
 int merge(char*  arquivo1, char*  arquivo2){

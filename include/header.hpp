@@ -3,9 +3,9 @@
 #include <string>
 
 typedef struct registro{
-	char* nome;
-	char* turma;
-	char* curso;
+	char nome[50];
+	char turma;
+	char curso[8];
 	int op;
 	int matric;
 	int chave;
