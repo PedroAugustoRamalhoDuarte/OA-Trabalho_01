@@ -5,6 +5,7 @@
 
 void escreve_arquivo(FILE* arq, Registro* reg){
 	//Escrever Registro
+	/* Formatar Melhor */
 	fprintf(arq, "%d %s %d %s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
 }
 void ler_linha_arquivo(FILE* arq, Registro *reg){
