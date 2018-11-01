@@ -4,13 +4,14 @@
 
 typedef struct registro{
 	char* nome;
-	char turma;
-	char curso;
+	char* turma;
+	char* curso;
 	int op;
-	char* matric;
+	int matric;
 	int chave;
 	char* info;
 }Registro;
+
 
 int merge(char*  arquivo1, char*  arquivo2);
 
