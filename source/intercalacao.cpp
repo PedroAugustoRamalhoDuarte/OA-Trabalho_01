@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include "../include/header.hpp"
+
 void get_chave(Registro* reg){
 	char* aux = (char*) malloc(sizeof(char) * 30);
 	int i;
@@ -15,8 +16,8 @@ void get_chave(Registro* reg){
 	};
 	aux[i] = '\0';
 	strcpy(reg->chave, aux);
-	printf("%s", reg->chave);
 }
+
 void escreve_arquivo(FILE* arq, Registro* reg){
 	/* Formatar Melhor */
 	fprintf(arq, "%s %s %d %s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
@@ -26,27 +27,22 @@ void ler_linha_arquivo(FILE* arq, Registro *reg){
 
 	/* Captura a matricula */
 	fscanf(arq, "%s", reg->matric);
-    printf("%s\n", reg->matric);
     fgetc(arq); /* Pegar o espaço que sobra */
 
     /* Captura o nome  */
     fscanf(arq, "%[^0-9]s", reg->nome);
-    printf("%s\n", reg->nome);
 
 	/* Captura o OP */
 	fscanf(arq, "%[0-9]s", aux);
 	reg->op = atoi(aux);
-	printf("%d\n", reg->op);
   	fscanf(arq, "%[^A-Z]s", aux); /* Pegar o espaço que sobra */
   	
   	/* Captura o Curso  */
   	fscanf(arq, "%[A-Z]s", reg->curso);
-  	printf("%s\n", reg->curso);
   	fscanf(arq, "%[^A-Z]s", aux); /* Pegar o espaço que sobra */
   	
   	/* Captura a turma */
   	reg->turma = fgetc(arq);
-  	printf("%c\n", reg->turma);
 
   	/* Definindo a chave */
   	get_chave(reg);
@@ -74,18 +70,14 @@ int merge(char*  arquivo1, char*  arquivo2){
 				}
 			}*/
 			/* Se os dois arquivos estiverem */
-			printf("Comparacao:%s , %s \n", reg1.chave,reg2.chave);
 			if (strcmp(reg1.chave,reg2.chave) < 0) {
-				printf("1 Menor\n");
 				escreve_arquivo(arqmerge, &reg1);
 				ler_linha_arquivo(arq1, &reg1);
 			} else {
 				if (strcmp(reg1.chave,reg2.chave) > 0) {
-					printf("2 Menor\n");
 					escreve_arquivo(arqmerge, &reg2);
 					ler_linha_arquivo(arq2, &reg2);
 				} else {
-					printf("Igual\n");
 					escreve_arquivo(arqmerge, &reg1);
 					ler_linha_arquivo(arq1, &reg1);
 					ler_linha_arquivo(arq2, &reg2);

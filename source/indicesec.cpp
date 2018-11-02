@@ -3,33 +3,34 @@
 #include"../include/lista.h"
 #include <string.h>
 #include <stdlib.h>
+
 int verifica_curso_novo (Lista* liscurso, char curso[8]){
 	if(is_in_lista(liscurso, curso)){
 		return 0;
 	}else {
 		return 1;
 	}
-
 }
 
 void escreve_seckey(FILE* arqsec, Registro reg, int cont){
 	long posicaoAtual = ftell(arqsec);
     fseek(arqsec, 0, SEEK_END);
-    fprintf(arqsec, "%8s %d", reg.curso, cont);
+    printf("escreve chave sec %s\n", reg.curso);
+    fprintf(arqsec, "%-8s %d\n", reg.curso, cont);
 	fseek(arqsec, posicaoAtual, SEEK_SET); /* Volta o ponteiro do arquivo para onde estava */
 }
 
 void escreve_listainvertidaP(FILE* arqinv, Registro reg){
 	long posicaoAtual = ftell(arqinv);
 	fseek(arqinv, 0, SEEK_END);
-	fprintf(arqinv, "%30s %d", reg.chave, -1);
+	fprintf(arqinv, "%-30s %d\n", reg.chave, -1);
 	fseek(arqinv, posicaoAtual, SEEK_SET); /* Volta o ponteiro do arquivo para onde estava */
 }
 
 void escreve_listainvertida(FILE* arqinv, Registro reg, int referencia){
 	long posicaoAtual = ftell(arqinv);
 	fseek(arqinv, 0, SEEK_END);
-	fprintf(arqinv, "%30s %d", reg.chave, referencia);
+	fprintf(arqinv, "%-30s %d\n", reg.chave, referencia);
 	fseek(arqinv, posicaoAtual, SEEK_SET); /* Volta o ponteiro do arquivo para onde estava */
 }
 
@@ -39,11 +40,12 @@ int muda_seckey(FILE* arqsec, Registro reg, int cont){
 	while(!feof(arqsec)){
 		long posicaoAux = ftell(arqsec);/* Posicao da linha */
 		fscanf(arqsec, "%s[A-Z]", curso);
-		if(strcmp(curso, reg.curso) == 0){
-			fscanf(arqsec, "%[^- ^0-9]s",aux); /* Pegar os espacos (fonte de erro)*/
+		if (strcmp(curso, reg.curso) == 0) {
+			fscanf(arqsec, "%[^0-9]s",aux); /* Pegar os espacos (fonte de erro)*/
 			fscanf(arqsec, "%[^\n]s" , referencia);
 			fseek(arqsec, posicaoAux, SEEK_SET);/* Volta para o comeco da linha */
-			fprintf(arqsec, "%8s %d", reg.curso, cont);
+			fprintf(arqsec, "%-8s %d\n", reg.curso, cont);
+			break;
 		}
 	}
 	fseek(arqsec, posicaoAtual, SEEK_SET);
@@ -55,8 +57,8 @@ void gera_lista_invertida(const char* nomearq){
 	FILE* arq = fopen(nomearq, "r");
 
 	/* Arquivo com numero de 0 a 9 */
-	char nomeinv[30] = "listainv ";
-	char nomesec[30] = "secundarykey ";
+	char nomeinv[30] = "listainv .txt";
+	char nomesec[30] = "secundarykey .txt";
 	/* Definindo nome dos arquivos de saida */
 	for (int i = 0; i < 30; ++i) {
 		if ('0' <= nomearq[i]  && nomearq[i] <= '9') {
@@ -66,7 +68,6 @@ void gera_lista_invertida(const char* nomearq){
 			break;
 		}
 	}
-
 	FILE* arqinv = fopen(nomeinv, "w+");
 	FILE* arqsec = fopen(nomesec, "w+");
 	Lista* liscurso;
@@ -74,6 +75,7 @@ void gera_lista_invertida(const char* nomearq){
 	Registro reg;
 	int cont = 0, referencia;
 	while(!feof(arq)){/* Enquanto houver registros */
+		printf("%d\n", cont);
 		ler_linha_arquivo(arq, &reg);
 		/* Se o curso for diferente dos outros ja registrados*/
 		if(verifica_curso_novo(liscurso, reg.curso)){

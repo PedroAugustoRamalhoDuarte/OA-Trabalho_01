@@ -1,4 +1,4 @@
-#include<stdio.h>
+/*#include<stdio.h>
 #include<header.hpp>
 
 void incluir(){
@@ -31,4 +31,4 @@ void incluir(){
 	scanf("%s", reg.nome)
 
 
-}
+}*/

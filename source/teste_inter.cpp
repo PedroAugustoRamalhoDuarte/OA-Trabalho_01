@@ -5,7 +5,7 @@
 
 char string1[30] = "lista1.txt";
 char string2[30] = "lista2.txt";
-TEST_CASE("get_chave"){
+/*TEST_CASE("get_chave"){
 	Registro reg;
 	strcpy(reg.nome, "Pedro Augusto Ramalho");
 	strcpy(reg.matric, "024312");
@@ -35,8 +35,8 @@ TEST_CASE("Verifica_curso_novo"){
 	REQUIRE(verifica_curso_novo(cursos, cursoec) == 0);
 	REQUIRE(verifica_curso_novo(cursos, cursocc) == 1);
 
-}
-
-/*TEST_CASE("Gera lista invertida "){
-    gera_lista_invertida(string1);
 }*/
+
+TEST_CASE("Gera lista invertida "){
+    gera_lista_invertida(string1);
+}

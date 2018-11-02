@@ -22,6 +22,7 @@ Lista* lista_insere(Lista* lis, char curso[8]){
     return novo;
 }
 
+
 int is_in_lista(Lista* lis, char curso[8]){
     /* Se a lista estiver vazia */
     if(lista_is_empty(lis)){
@@ -29,9 +30,12 @@ int is_in_lista(Lista* lis, char curso[8]){
     }
     Lista* aux = lis;
     while(aux != NULL){
-        if(strcmp(lis->curso, curso) == 0){
+        printf("%s %d %s %d ",aux->curso ,strlen(aux->curso) ,curso,strlen(curso));
+        if(strcmp(aux->curso, curso) == 0){
+            printf("igual\n");
             return 1;
         }
+        printf("diferentel\n");
         aux = aux->prox;
     }
     return 0;
