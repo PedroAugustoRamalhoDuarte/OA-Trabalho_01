@@ -13,9 +13,9 @@ TEST_CASE("get_chave"){
 	REQUIRE(strcmp(reg.chave, "024312Pedro") == 0 );
 
 }
-/*TEST_CASE("Merge"){
+TEST_CASE("Merge"){
 	REQUIRE(merge(string1, string2));
-}*/
+}
 TEST_CASE("Calcula Registro Arquivo"){
 	FILE* arq = fopen(string1, "r");
 	REQUIRE(calcularRegistroArquivo(arq) == 19);

@@ -74,13 +74,13 @@ int merge(char*  arquivo1, char*  arquivo2){
 				}
 			}*/
 			/* Se os dois arquivos estiverem */
-			printf("Comparacao:%d , %d \n", reg1.chave,reg2.chave);
-			if (reg1.chave < reg2.chave) {
+			printf("Comparacao:%s , %s \n", reg1.chave,reg2.chave);
+			if (strcmp(reg1.chave,reg2.chave) < 0) {
 				printf("1 Menor\n");
 				escreve_arquivo(arqmerge, &reg1);
 				ler_linha_arquivo(arq1, &reg1);
 			} else {
-				if (reg2.chave < reg1.chave) {
+				if (strcmp(reg1.chave,reg2.chave) > 0) {
 					printf("2 Menor\n");
 					escreve_arquivo(arqmerge, &reg2);
 					ler_linha_arquivo(arq2, &reg2);
