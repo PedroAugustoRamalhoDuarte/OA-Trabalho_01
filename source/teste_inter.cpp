@@ -39,4 +39,5 @@ TEST_CASE("Verifica_curso_novo"){
 
 TEST_CASE("Gera lista invertida "){
     gera_lista_invertida(string1);
+    gera_lista_invertida(string2);
 }

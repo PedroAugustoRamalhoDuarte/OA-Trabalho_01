@@ -5,7 +5,7 @@
 042290Bruno                    2
 042780Daniel                   4
 042865Danilo                   3
-043217Erikita                  0
+043217Erikita                  6
 043341Fabricio                 5
 044072Igor                     8
 045058Marcio                   9

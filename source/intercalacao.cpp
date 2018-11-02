@@ -43,7 +43,6 @@ void ler_linha_arquivo(FILE* arq, Registro *reg){
   	
   	/* Captura a turma */
   	reg->turma = fgetc(arq);
-
   	/* Definindo a chave */
   	get_chave(reg);
 }
