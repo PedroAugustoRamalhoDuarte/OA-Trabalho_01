@@ -6,10 +6,10 @@ LDIR =../lib
 
 LIBS=-lm
 
-_DEPS = header.hpp
+_DEPS = header.hpp lista.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = intercalacao.o teste_inter.o indicesec.o
+_OBJ = intercalacao.o teste_inter.o indicesec.o lista.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
