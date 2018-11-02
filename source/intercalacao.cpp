@@ -1,19 +1,32 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string>
+#include<string.h>
 #include "../include/header.hpp"
-
+void get_chave(Registro* reg){
+	char* aux = (char*) malloc(sizeof(char) * 30);
+	int i;
+	for(i = 0; i < 7; i++){
+		aux[i] = reg->matric[i];
+	}
+	for(i = 6; i < 30; i++){
+		if(reg->nome[i-6] == ' ')
+			break;
+		aux[i] = reg->nome[i-6];
+	};
+	aux[i] = '\0';
+	strcpy(reg->chave, aux);
+	printf("%s", reg->chave);
+}
 void escreve_arquivo(FILE* arq, Registro* reg){
 	/* Formatar Melhor */
-	fprintf(arq, "%d %s %d %s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
+	fprintf(arq, "%s %s %d %s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
 }
 void ler_linha_arquivo(FILE* arq, Registro *reg){
 	char aux[30];
 
 	/* Captura a matricula */
-	fscanf(arq, "%s", aux);
-    reg->matric = atoi(aux);
-    printf("%d\n", reg->matric);
+	fscanf(arq, "%s", reg->matric);
+    printf("%s\n", reg->matric);
     fgetc(arq); /* Pegar o espaço que sobra */
 
     /* Captura o nome  */
@@ -36,7 +49,7 @@ void ler_linha_arquivo(FILE* arq, Registro *reg){
   	printf("%c\n", reg->turma);
 
   	/* Definindo a chave */
-  	reg->chave = reg->matric;
+  	get_chave(reg);
 }
 
 int merge(char*  arquivo1, char*  arquivo2){

@@ -2,7 +2,7 @@
 #include "../include/header.hpp"
 #include"../include/lista.h"
 #include <string.h>
-
+#include <stdlib.h>
 int verifica_curso_novo (Lista* liscurso, char curso[8]){
 	if(is_in_lista(liscurso, curso)){
 		return 0;
@@ -13,20 +13,45 @@ int verifica_curso_novo (Lista* liscurso, char curso[8]){
 }
 
 void escreve_seckey(FILE* arqsec, Registro reg, int cont){
+	long posicaoAtual = ftell(arqsec);
     fseek(arqsec, 0, SEEK_END);
     fprintf(arqsec, "%8s %d", reg.curso, cont);
+	fseek(arqsec, posicaoAtual, SEEK_SET); /* Volta o ponteiro do arquivo para onde estava */
 }
 
-void escreve_listainvertida(FILE* arqinv, Registro reg){
-
+void escreve_listainvertidaP(FILE* arqinv, Registro reg){
+	long posicaoAtual = ftell(arqinv);
+	fseek(arqinv, 0, SEEK_END);
+	fprintf(arqinv, "%30s %d", reg.chave, -1);
+	fseek(arqinv, posicaoAtual, SEEK_SET); /* Volta o ponteiro do arquivo para onde estava */
 }
 
-void muda_seckey(FILE* arqsec, Registro reg){
+void escreve_listainvertida(FILE* arqinv, Registro reg, int referencia){
+	long posicaoAtual = ftell(arqinv);
+	fseek(arqinv, 0, SEEK_END);
+	fprintf(arqinv, "%30s %d", reg.chave, referencia);
+	fseek(arqinv, posicaoAtual, SEEK_SET); /* Volta o ponteiro do arquivo para onde estava */
+}
 
+int muda_seckey(FILE* arqsec, Registro reg, int cont){
+	long posicaoAtual = ftell(arqsec);
+	char curso[8], aux[30], referencia[5];
+	while(!feof(arqsec)){
+		long posicaoAux = ftell(arqsec);/* Posicao da linha */
+		fscanf(arqsec, "%s[A-Z]", curso);
+		if(strcmp(curso, reg.curso) == 0){
+			fscanf(arqsec, "%[^- ^0-9]s",aux); /* Pegar os espacos (fonte de erro)*/
+			fscanf(arqsec, "%[^\n]s" , referencia);
+			fseek(arqsec, posicaoAux, SEEK_SET);/* Volta para o comeco da linha */
+			fprintf(arqsec, "%8s %d", reg.curso, cont);
+		}
+	}
+	fseek(arqsec, posicaoAtual, SEEK_SET);
+	return atoi(referencia);
 }
 
 
-void lista_invertida(const char* nomearq){
+void gera_lista_invertida(const char* nomearq){
 	FILE* arq = fopen(nomearq, "r");
 
 	/* Arquivo com numero de 0 a 9 */
@@ -47,17 +72,17 @@ void lista_invertida(const char* nomearq){
 	Lista* liscurso;
 	liscurso = lista_cria();
 	Registro reg;
-	int cont = 0;
+	int cont = 0, referencia;
 	while(!feof(arq)){/* Enquanto houver registros */
 		ler_linha_arquivo(arq, &reg);
 		/* Se o curso for diferente dos outros ja registrados*/
 		if(verifica_curso_novo(liscurso, reg.curso)){
 			liscurso = lista_insere(liscurso, reg.curso);
 			escreve_seckey(arqsec, reg, cont); /* Escreve no arquivo da chave secundaria */
-			escreve_listainvertida(arqinv, reg); /* Escreve no arquivo de indice invertido */
+			escreve_listainvertidaP(arqinv, reg); /* Escreve no arquivo de indice invertido */
 		}else{
-			muda_seckey(arqsec, reg);
-			escreve_listainvertida(arqinv, reg);
+			referencia = muda_seckey(arqsec, reg, cont);
+			escreve_listainvertida(arqinv, reg, referencia);
 		}
 		cont ++;
 	}

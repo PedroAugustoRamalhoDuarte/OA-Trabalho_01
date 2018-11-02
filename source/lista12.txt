@@ -1,39 +1,19 @@
-15511 Angelo Luiz Rocatto Junior                34 CC B 
-24312 Leonardo Nunes de Souza                   32 EC A 
-31147 Anderson Silva Bezerra                    34 EC B 
-31200 Andre Luiz Silva Bezerra                  34 CC B 
-31272 Andreza Pollyana da Silva                 32 EC A 
-32725 Fellipe Choi                              32 CC B 
-33282 Henrique Elias da Silva                   34 CC B 
-35830 Rogerio Augusto de Castro Neves           37 EC A 
-37396 Hugo Torres de Carvalho Brandao           34 CC B 
-41881 Ana Luisa Costa Miguel                    34 CC A 
-42290 Bruno Filipe Milare de Macedo             34 EC A 
-42348 Bruno Teles                               34 EC B 
-42728 Daniel Alonso Negrini                     34 EC B 
-42780 Daniel Schowantz Silva                    34 EC A 
-42865 Danilo Silva Marshall                     35 CC A 
-43217 Erikita Regina Campos de Almeida          34 CC A 
-43341 Fabricio Nallin Violin                    34 EC A 
-43648 Franz Glauber Vanderlinde                 38 EC B 
-44072 Igor Ribeiro de Assis                     34 EC A 
-44281 Jorge Luiz Silverio dos Santos            34 CC B 
-44637 Leonardo Machado Carreiro                 34 CC B 
-45058 Marcio Alexandre Marar Moreno             34 EC A 
-45460 Murilo Bianchini                          34 EC B 
-44072 Igor Ribeiro de Assis                     34 CC B 
-45585 Otavio Monteiro Becker Neto               34 EC B 
-45927 Rafael Obregon de Melo                    34 CC B 
-42780 Daniel Schowantz Silva                    34 EM B 
-45934 Rafael Pinhate Bandeira                   34 CC B 
-46245 Roberto Rodrigues Borgognoni              35 CC B 
-46306 Rodrigo Dias Takase                       35 EC A 
-46674 Tharsis Tuani Pinto Souza                 37 EM B 
-46708 Thiago de Moraes Sfredo                   35 EM A 
-46713 Thiago Fernandes Crepaldi                 34 EC A 
-46718 Thiago Henrique Parra                     35 EC B 
-46802 Tiago Rezende Campos Falcao               34 EC A 
-46944 Vitor Baccetti Garcia                     34 EC A 
-46946 Vitor Bruno Jacintho de Almeida           34 EC A 
-46956 Vitor Gouvea Franchi                      34 EC A 
-46961 Vitor Paulo Villarino Pinto               32 EC A 
+024312 Leonardo Nunes de Souza                   32 EC A 
+031272 Andreza Pollyana da Silva                 32 EC A 
+035830 Rogerio Augusto de Castro Neves           37 EC A 
+041881 Ana Luisa Costa Miguel                    34 CC A 
+042290 Bruno Filipe Milare de Macedo             34 EC A 
+042780 Daniel Schowantz Silva                    34 EC A 
+042865 Danilo Silva Marshall                     35 CC A 
+043217 Erikita Regina Campos de Almeida          34 CC A 
+043341 Fabricio Nallin Violin                    34 EC A 
+044072 Igor Ribeiro de Assis                     34 EC A 
+045058 Marcio Alexandre Marar Moreno             34 EC A 
+046306 Rodrigo Dias Takase                       35 EC A 
+046708 Thiago de Moraes Sfredo                   35 EM A 
+046713 Thiago Fernandes Crepaldi                 34 EC A 
+046802 Tiago Rezende Campos Falcao               34 EC A 
+046944 Vitor Baccetti Garcia                     34 EC A 
+046946 Vitor Bruno Jacintho de Almeida           34 EC A 
+046956 Vitor Gouvea Franchi                      34 EC A 
+046961 Vitor Paulo Villarino Pinto               32 EC A 
