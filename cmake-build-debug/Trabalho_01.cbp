@@ -116,13 +116,16 @@
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/separacao.txt">
 			<Option target="Trabalho_01"/>
 		</Unit>
-		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/func.c">
+		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/indiceprimario.cpp">
 			<Option target="Trabalho_01"/>
 		</Unit>
-		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/indicesec.cpp">
+		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/indicesecundario.cpp">
 			<Option target="Trabalho_01"/>
 		</Unit>
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/intercalacao.cpp">
+			<Option target="Trabalho_01"/>
+		</Unit>
+		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/interface.cpp">
 			<Option target="Trabalho_01"/>
 		</Unit>
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/lista.cpp">
@@ -143,13 +146,16 @@
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/makefile">
 			<Option target="Trabalho_01"/>
 		</Unit>
-		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/obj/indicesec.o">
+		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/obj/indicesecundario.o">
 			<Option target="Trabalho_01"/>
 		</Unit>
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/obj/intercalacao.o">
 			<Option target="Trabalho_01"/>
 		</Unit>
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/obj/teste_inter.o">
+			<Option target="Trabalho_01"/>
+		</Unit>
+		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/ordenacao.cpp">
 			<Option target="Trabalho_01"/>
 		</Unit>
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/teste_inter.cpp">

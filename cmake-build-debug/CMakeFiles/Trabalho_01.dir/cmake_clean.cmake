@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Trabalho_01.dir/source/func.c.o"
-  "CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o"
+  "CMakeFiles/Trabalho_01.dir/source/interface.cpp.o"
+  "CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o"
   "CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.o"
   "CMakeFiles/Trabalho_01.dir/source/main.c.o"
   "CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.o"
+  "CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o"
+  "CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o"
   "CMakeFiles/Trabalho_01.dir/source/lista.cpp.o"
   "Trabalho_01.pdb"
   "Trabalho_01"

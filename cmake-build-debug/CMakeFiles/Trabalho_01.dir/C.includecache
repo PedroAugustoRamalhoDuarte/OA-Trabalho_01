@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-../include/header.hpp
+/home/pedro/UNB/OA/Trabalho_01/include/header.hpp
+lista.h
+/home/pedro/UNB/OA/Trabalho_01/include/lista.h
 
-/home/pedro/UNB/OA/Trabalho_01/source/func.c
+/home/pedro/UNB/OA/Trabalho_01/include/lista.h
 stdio.h
 -
-header.hpp
+
+/home/pedro/UNB/OA/Trabalho_01/source/main.c
+stdio.h
 -
+../include/header.hpp
+/home/pedro/UNB/OA/Trabalho_01/include/header.hpp
 

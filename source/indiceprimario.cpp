@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string>
-#include "intercalacao.cpp"
+#include<../include/header.hpp>
 
 int  printa_indice_invertido(FILE* arqindice, Registro reg, int ref){
 	int i=0, num;
-	fprintf(arqindice, "%d%d",0,reg.matric);
+	fprintf(arqindice, "%s",reg.matric);
 	// Pega o nome até encontrar um espaço
 	while (reg.nome[i] != ' '){
 		fprintf(arqindice, "%c", reg.nome[i] );
@@ -43,11 +43,3 @@ void cria_indice_primario(FILE *arq, const char* nomelista){
 }
 
 
-/*------------------------------------------TESTE--------------------------------------------------*/
-int main(){
-	FILE *arq1 = fopen("lista1.txt", "r");
-	FILE *arq2 = fopen("lista2.txt", "r");
-	cria_indice_primario(arq1, "indicelista1.ind");
-	cria_indice_primario(arq2, "indicelista2.ind");
-
-}

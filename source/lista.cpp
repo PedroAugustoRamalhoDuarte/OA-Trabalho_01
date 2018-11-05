@@ -42,12 +42,9 @@ int is_in_lista(Lista* lis, char curso[8]){
     }
     Lista* aux = lis;
     while(aux != NULL){
-        printf("%s %d %s %d ",aux->curso ,strlen(aux->curso) ,curso,strlen(curso));
         if(strcmp(aux->curso, curso) == 0){
-            printf("igual\n");
             return 1;
         }
-        printf("diferentel\n");
         aux = aux->prox;
     }
     return 0;

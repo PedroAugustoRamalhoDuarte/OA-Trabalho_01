@@ -13,11 +13,11 @@ add_executable(Trabalho_01
         include/header.hpp
         lib/lista1.txt
         lib/lista2.txt
-        source/obj/indicesec.o
+        source/obj/indicesecundario.o
         source/obj/intercalacao.o
         source/obj/teste_inter.o
-        source/func.c
-        source/indicesec.cpp
+        source/interface.cpp
+        source/indicesecundario.cpp
         source/intercalacao.cpp
         source/lista1.txt
         source/lista12.txt
@@ -25,6 +25,8 @@ add_executable(Trabalho_01
         source/main.c
         source/makefile
         source/teste_inter.cpp
+        source/indiceprimario.cpp
+        source/ordenacao.cpp
         instrucao.txt
         README.md
         separacao.txt

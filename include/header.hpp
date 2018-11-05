@@ -4,6 +4,7 @@
 
 #define TAM_REG 63
 
+
 #include "lista.h"
 
 typedef struct registro{
@@ -11,28 +12,60 @@ typedef struct registro{
 	char turma;
 	char curso[8];
 	int op;
-	int matric;
-	int chave;
-	char* info;
+	char matric[7];
+	char chave[30];
 }Registro;
+/* Funções universais */
+void ler_linha_arquivo(FILE* arq, Registro* reg);
 
+/* Interface */
+void incluir();
+
+void excluir();
+
+void alterar();
+
+int verifica_matricula(int matricula);
+
+void excluir_registro(char nomearquivo[20], int matricula, long ref);
+
+int verifica_nome(char nome[50]);
+
+long existe_matricula(int matricula, FILE* arq);
+
+void insere_registro(char nomearq[20],Registro* reg);
+
+Registro get_nome(Registro reg);
+
+Registro get_matricula(Registro reg, FILE* arquivo);
+
+Registro get_curso(Registro reg);
+
+Registro get_op(Registro reg);
+
+Registro get_turma(Registro reg);
+
+int is_num(char numero[10], int max_len);
 /* Arquivo Secundario */
 int verifica_curso_novo(Lista* liscurso, char curso[8]);
 
-void escreve_seckey(FILE* arqsec, Registro reg, int cont);
+void escreve_listainvertidaP(FILE* arqinv, Registro reg);
 
-void escreve_listainvertida(FILE* arqinv, Registro reg);
+void escreve_listainvertida(FILE* arqinv, Registro reg, int referencia);
 
-void muda_seckey(FILE* arqsec, Registro reg);
-
-void lista_invertida(const char* nomearq);
+void gera_lista_invertida(const char* nomearq);
 
 long calcularRegistroArquivo(FILE* arquivo);
 
-/* Merge */
-int merge(char*  arquivo1, char*  arquivo2);
+/* Arquivo Primario */
+int  printa_indice_invertido(FILE* arqindice, Registro reg, int ref);
 
-void ler_linha_arquivo(FILE* arq, Registro* reg);
+void cria_indice_primario(FILE *arq, const char* nomelista);
+
+/* Merge */
+void get_chave(Registro* reg);
+
+int merge(char*  arquivo1, char*  arquivo2);
 
 void escreve_arquivo(FILE* arq, Registro* reg);
 

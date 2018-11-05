@@ -4,6 +4,7 @@
 #include "../include/header.hpp"
 
 void get_chave(Registro* reg){
+	/* funcao faz a chave juntando matricula com o primeiro nome */
 	char* aux = (char*) malloc(sizeof(char) * 30);
 	int i;
 	for(i = 0; i < 7; i++){
@@ -19,8 +20,8 @@ void get_chave(Registro* reg){
 }
 
 void escreve_arquivo(FILE* arq, Registro* reg){
-	/* Formatar Melhor */
-	fprintf(arq, "%s %s %d %s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
+	/* Escreve o arquivo com formatacao */
+	fprintf(arq, "%s %-40s %d  %-8s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
 }
 void ler_linha_arquivo(FILE* arq, Registro *reg){
 	char aux[30];

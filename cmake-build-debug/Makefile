@@ -123,59 +123,59 @@ Trabalho_01/fast:
 	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/build
 .PHONY : Trabalho_01/fast
 
-source/func.o: source/func.c.o
+source/indiceprimario.o: source/indiceprimario.cpp.o
 
-.PHONY : source/func.o
-
-# target to build an object file
-source/func.c.o:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/func.c.o
-.PHONY : source/func.c.o
-
-source/func.i: source/func.c.i
-
-.PHONY : source/func.i
-
-# target to preprocess a source file
-source/func.c.i:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/func.c.i
-.PHONY : source/func.c.i
-
-source/func.s: source/func.c.s
-
-.PHONY : source/func.s
-
-# target to generate assembly for a file
-source/func.c.s:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/func.c.s
-.PHONY : source/func.c.s
-
-source/indicesec.o: source/indicesec.cpp.o
-
-.PHONY : source/indicesec.o
+.PHONY : source/indiceprimario.o
 
 # target to build an object file
-source/indicesec.cpp.o:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o
-.PHONY : source/indicesec.cpp.o
+source/indiceprimario.cpp.o:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o
+.PHONY : source/indiceprimario.cpp.o
 
-source/indicesec.i: source/indicesec.cpp.i
+source/indiceprimario.i: source/indiceprimario.cpp.i
 
-.PHONY : source/indicesec.i
+.PHONY : source/indiceprimario.i
 
 # target to preprocess a source file
-source/indicesec.cpp.i:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.i
-.PHONY : source/indicesec.cpp.i
+source/indiceprimario.cpp.i:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.i
+.PHONY : source/indiceprimario.cpp.i
 
-source/indicesec.s: source/indicesec.cpp.s
+source/indiceprimario.s: source/indiceprimario.cpp.s
 
-.PHONY : source/indicesec.s
+.PHONY : source/indiceprimario.s
 
 # target to generate assembly for a file
-source/indicesec.cpp.s:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.s
-.PHONY : source/indicesec.cpp.s
+source/indiceprimario.cpp.s:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.s
+.PHONY : source/indiceprimario.cpp.s
+
+source/indicesecundario.o: source/indicesecundario.cpp.o
+
+.PHONY : source/indicesecundario.o
+
+# target to build an object file
+source/indicesecundario.cpp.o:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o
+.PHONY : source/indicesecundario.cpp.o
+
+source/indicesecundario.i: source/indicesecundario.cpp.i
+
+.PHONY : source/indicesecundario.i
+
+# target to preprocess a source file
+source/indicesecundario.cpp.i:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.i
+.PHONY : source/indicesecundario.cpp.i
+
+source/indicesecundario.s: source/indicesecundario.cpp.s
+
+.PHONY : source/indicesecundario.s
+
+# target to generate assembly for a file
+source/indicesecundario.cpp.s:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.s
+.PHONY : source/indicesecundario.cpp.s
 
 source/intercalacao.o: source/intercalacao.cpp.o
 
@@ -203,6 +203,33 @@ source/intercalacao.s: source/intercalacao.cpp.s
 source/intercalacao.cpp.s:
 	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.s
 .PHONY : source/intercalacao.cpp.s
+
+source/interface.o: source/interface.cpp.o
+
+.PHONY : source/interface.o
+
+# target to build an object file
+source/interface.cpp.o:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/interface.cpp.o
+.PHONY : source/interface.cpp.o
+
+source/interface.i: source/interface.cpp.i
+
+.PHONY : source/interface.i
+
+# target to preprocess a source file
+source/interface.cpp.i:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/interface.cpp.i
+.PHONY : source/interface.cpp.i
+
+source/interface.s: source/interface.cpp.s
+
+.PHONY : source/interface.s
+
+# target to generate assembly for a file
+source/interface.cpp.s:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/interface.cpp.s
+.PHONY : source/interface.cpp.s
 
 source/lista.o: source/lista.cpp.o
 
@@ -258,6 +285,33 @@ source/main.c.s:
 	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/main.c.s
 .PHONY : source/main.c.s
 
+source/ordenacao.o: source/ordenacao.cpp.o
+
+.PHONY : source/ordenacao.o
+
+# target to build an object file
+source/ordenacao.cpp.o:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o
+.PHONY : source/ordenacao.cpp.o
+
+source/ordenacao.i: source/ordenacao.cpp.i
+
+.PHONY : source/ordenacao.i
+
+# target to preprocess a source file
+source/ordenacao.cpp.i:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.i
+.PHONY : source/ordenacao.cpp.i
+
+source/ordenacao.s: source/ordenacao.cpp.s
+
+.PHONY : source/ordenacao.s
+
+# target to generate assembly for a file
+source/ordenacao.cpp.s:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.s
+.PHONY : source/ordenacao.cpp.s
+
 source/teste_inter.o: source/teste_inter.cpp.o
 
 .PHONY : source/teste_inter.o
@@ -294,21 +348,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Trabalho_01"
-	@echo "... source/func.o"
-	@echo "... source/func.i"
-	@echo "... source/func.s"
-	@echo "... source/indicesec.o"
-	@echo "... source/indicesec.i"
-	@echo "... source/indicesec.s"
+	@echo "... source/indiceprimario.o"
+	@echo "... source/indiceprimario.i"
+	@echo "... source/indiceprimario.s"
+	@echo "... source/indicesecundario.o"
+	@echo "... source/indicesecundario.i"
+	@echo "... source/indicesecundario.s"
 	@echo "... source/intercalacao.o"
 	@echo "... source/intercalacao.i"
 	@echo "... source/intercalacao.s"
+	@echo "... source/interface.o"
+	@echo "... source/interface.i"
+	@echo "... source/interface.s"
 	@echo "... source/lista.o"
 	@echo "... source/lista.i"
 	@echo "... source/lista.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
+	@echo "... source/ordenacao.o"
+	@echo "... source/ordenacao.i"
+	@echo "... source/ordenacao.s"
 	@echo "... source/teste_inter.o"
 	@echo "... source/teste_inter.i"
 	@echo "... source/teste_inter.s"

@@ -57,31 +57,31 @@ include CMakeFiles/Trabalho_01.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Trabalho_01.dir/flags.make
 
-CMakeFiles/Trabalho_01.dir/source/func.c.o: CMakeFiles/Trabalho_01.dir/flags.make
-CMakeFiles/Trabalho_01.dir/source/func.c.o: ../source/func.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Trabalho_01.dir/source/func.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/func.c.o   -c /home/pedro/UNB/OA/Trabalho_01/source/func.c
+CMakeFiles/Trabalho_01.dir/source/interface.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
+CMakeFiles/Trabalho_01.dir/source/interface.cpp.o: ../source/interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Trabalho_01.dir/source/interface.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/interface.cpp.o -c /home/pedro/UNB/OA/Trabalho_01/source/interface.cpp
 
-CMakeFiles/Trabalho_01.dir/source/func.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_01.dir/source/func.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/func.c > CMakeFiles/Trabalho_01.dir/source/func.c.i
+CMakeFiles/Trabalho_01.dir/source/interface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trabalho_01.dir/source/interface.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/interface.cpp > CMakeFiles/Trabalho_01.dir/source/interface.cpp.i
 
-CMakeFiles/Trabalho_01.dir/source/func.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_01.dir/source/func.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/func.c -o CMakeFiles/Trabalho_01.dir/source/func.c.s
+CMakeFiles/Trabalho_01.dir/source/interface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/interface.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/interface.cpp -o CMakeFiles/Trabalho_01.dir/source/interface.cpp.s
 
-CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
-CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o: ../source/indicesec.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o -c /home/pedro/UNB/OA/Trabalho_01/source/indicesec.cpp
+CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
+CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o: ../source/indicesecundario.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o -c /home/pedro/UNB/OA/Trabalho_01/source/indicesecundario.cpp
 
-CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/indicesec.cpp > CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.i
+CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/indicesecundario.cpp > CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.i
 
-CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/indicesec.cpp -o CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.s
+CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/indicesecundario.cpp -o CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.s
 
 CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
 CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.o: ../source/intercalacao.cpp
@@ -122,9 +122,35 @@ CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/teste_inter.cpp -o CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.s
 
+CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
+CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o: ../source/indiceprimario.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o -c /home/pedro/UNB/OA/Trabalho_01/source/indiceprimario.cpp
+
+CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/indiceprimario.cpp > CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.i
+
+CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/indiceprimario.cpp -o CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.s
+
+CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
+CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o: ../source/ordenacao.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o -c /home/pedro/UNB/OA/Trabalho_01/source/ordenacao.cpp
+
+CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/ordenacao.cpp > CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.i
+
+CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/ordenacao.cpp -o CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.s
+
 CMakeFiles/Trabalho_01.dir/source/lista.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
 CMakeFiles/Trabalho_01.dir/source/lista.cpp.o: ../source/lista.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Trabalho_01.dir/source/lista.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Trabalho_01.dir/source/lista.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/lista.cpp.o -c /home/pedro/UNB/OA/Trabalho_01/source/lista.cpp
 
 CMakeFiles/Trabalho_01.dir/source/lista.cpp.i: cmake_force
@@ -137,31 +163,35 @@ CMakeFiles/Trabalho_01.dir/source/lista.cpp.s: cmake_force
 
 # Object files for target Trabalho_01
 Trabalho_01_OBJECTS = \
-"CMakeFiles/Trabalho_01.dir/source/func.c.o" \
-"CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o" \
+"CMakeFiles/Trabalho_01.dir/source/interface.cpp.o" \
+"CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/main.c.o" \
 "CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.o" \
+"CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o" \
+"CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/lista.cpp.o"
 
 # External object files for target Trabalho_01
 Trabalho_01_EXTERNAL_OBJECTS = \
-"/home/pedro/UNB/OA/Trabalho_01/source/obj/indicesec.o" \
+"/home/pedro/UNB/OA/Trabalho_01/source/obj/indicesecundario.o" \
 "/home/pedro/UNB/OA/Trabalho_01/source/obj/intercalacao.o" \
 "/home/pedro/UNB/OA/Trabalho_01/source/obj/teste_inter.o"
 
-Trabalho_01: CMakeFiles/Trabalho_01.dir/source/func.c.o
-Trabalho_01: CMakeFiles/Trabalho_01.dir/source/indicesec.cpp.o
+Trabalho_01: CMakeFiles/Trabalho_01.dir/source/interface.cpp.o
+Trabalho_01: CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/main.c.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.o
+Trabalho_01: CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o
+Trabalho_01: CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/lista.cpp.o
-Trabalho_01: ../source/obj/indicesec.o
+Trabalho_01: ../source/obj/indicesecundario.o
 Trabalho_01: ../source/obj/intercalacao.o
 Trabalho_01: ../source/obj/teste_inter.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/build.make
 Trabalho_01: CMakeFiles/Trabalho_01.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Trabalho_01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Trabalho_01"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Trabalho_01.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

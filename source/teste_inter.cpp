@@ -31,13 +31,48 @@ TEST_CASE("Verifica_curso_novo"){
 	char cursoec[8] = "EC";
 	char cursocc[8] = "CC";
 	REQUIRE(verifica_curso_novo(cursos, cursoec) == 1);
-	cursos = lista_insere(cursos, cursoec);
+	cursos = lista_insere(cursos, cursoec, 0);
 	REQUIRE(verifica_curso_novo(cursos, cursoec) == 0);
 	REQUIRE(verifica_curso_novo(cursos, cursocc) == 1);
 
-}*/
+}
 
 TEST_CASE("Gera lista invertida "){
     gera_lista_invertida(string1);
     gera_lista_invertida(string2);
+}
+
+TEST_CASE("Gera indiceprimario"){
+    FILE* arq = fopen(string1, "r");
+    FILE* arq1 = fopen(string2, "r");
+    cria_indice_primario(arq, "indicelista1.ind");
+    cria_indice_primario(arq1, "indicelista2.ind");
+    fclose(arq);
+}
+
+TEST_CASE("Existe registro"){
+    int matricula = 24312;
+    int matriculafalsa = 012211;
+    FILE* arq = fopen(string1, "r");
+    REQUIRE(existe_matricula(matricula, arq) == 0);
+    REQUIRE(existe_matricula(matriculafalsa, arq) == -1);
+    fclose(arq);
+}*/
+
+/*TEST_CASE("Inserir Registro"){
+	Registro reg;
+	strcpy(reg.matric, "071231");
+	strcpy(reg.nome, "Pedro Augusto");
+	strcpy(reg.curso, "EC");
+	reg.op = 32;
+	reg.turma = 'A';
+
+	insere_registro(string1, &reg);
+}*/
+/*
+TEST_CASE("Excluir Registro"){
+    excluir_registro(string1, 024312, 0);
+}*/
+TEST_CASE("Interface inserir"){
+	incluir();
 }
