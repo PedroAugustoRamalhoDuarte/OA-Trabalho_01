@@ -3,6 +3,35 @@
 #include<ctype.h>
 #include <stdlib.h>
 #include <string.h>
+void visualizar(){
+    int arq,i=0;
+    FILE* arquivo;
+    system("clear");
+    printf("Visualisar:\n");
+    while(1){
+        printf("Escolha qual arquivo deseja-se visualizar:\n1 - Arquivo1\n2 - Arquivo2\n3 - Merge\n");
+        scanf("%d", &arq);
+        if (arq == 1){
+            arquivo = fopen("lista1.txt", "r");
+            break;
+        }
+        else if(arq == 2){
+            arquivo = fopen("lista2.txt", "r");
+            break;
+        }else if(arq == 3){
+            arquivo = fopen("lista12.txt", "r");
+            break;
+        }
+    }
+    char texto[5000];
+    while(!feof(arquivo)){
+        texto[i] = fgetc(arquivo);
+        printf("%c", texto[i]);
+        i++;
+    }
+    printf("%s",texto);
+    getc(stdin);
+}
 void incluir(){
 	int arq;
 	FILE* arquivo;
@@ -36,95 +65,52 @@ void incluir(){
 	insere_registro(nomearquivo, &reg);
 }
 
-Registro get_nome(Registro reg){
-    printf("Digite o nome do aluno: ");
-    setbuf(stdin, 0);
-    scanf("%[^\n]s", reg.nome);
-    fflush(stdin);
-    printf("%s\n", reg.nome);
-    return reg;
-}
-
-Registro get_matricula(Registro reg, FILE* arq){
-    int cont=6;
-    char aux;
-    printf("Digite a matricula do aluno: ");
-    // Garantindo que a matricula contenha somente números
-    do {
-        if (cont != 6){
-            printf("Valor invalido, digite uma matricula de 6 numeros: ");
-        }
-        setbuf(stdin, 0);
-        scanf("%[^\n]s", reg.matric);
-        fflush(stdin);
-        //fgets(reg.matric, 7, stdin);
-        while(isalpha(reg.matric[0]) || isalpha(reg.matric[1]) || isalpha(reg.matric[2]) || isalpha(reg.matric[3]) ||
-              isalpha(reg.matric[4]) || isalpha(reg.matric[5])) {
-            printf("Valor invalido, digite apenas numeros: ");
-            scanf("%s", reg.matric);
-        }
-        cont = strlen(reg.matric);
-
-    } while(cont != 6);
-
-    printf("%s\n", reg.matric);
-    return reg;
-}
-
-Registro get_curso(Registro reg){
-    strcpy(reg.curso,"WC");
-    do {
-        if (!isupper(reg.curso[0]) || !isupper(reg.curso[1])){
-            printf("O curso deve conter todas as letras maiusculas! Digite novamente: ");
-        }
-        printf("Digite o curso: ");
-        setbuf(stdin, 0);
-        scanf("%c%c", &reg.curso[0],&reg.curso[1]);
-        fflush(stdin);
-    } while(!isupper(reg.curso[0]) || !isupper(reg.curso[1]));
-    printf("%s\n", reg.curso);
-    return reg;
-}
-
-Registro get_op(Registro reg){
-    printf("Digite a OP:");
-    setbuf(stdin, 0);
-    scanf("%d", &reg.op);
-    printf("%d\n", reg.op);
-    return reg;
-}
-
-Registro get_turma(Registro reg){
-    strcpy(&reg.turma,"P");
-    do {
-        printf("Digite a turma: ");
-        setbuf(stdin, 0);
-        scanf("%c", &reg.turma);
-        if (islower(reg.turma)){
-            printf("A letra da turma deve ser em letra maiuscula! Digite novamente: ");
-        }
-    } while(islower(reg.turma));
-    printf("%c\n", reg.turma);
-    return reg;
-
-}
 void alterar(){
-    int op = -1;
-    do{
-        printf("Voce deseja alterar o arquivo com:\n0 - mudanca de chave primaria\n 1 - sem mudanca de chave primaria");
-        scanf("%d", &op);
-    }while (op == 0 || op == 1);
-    switch (op){
-        case 0:
-            /* Com mudanca de chave primaria */
-            return;
-        case 1:
-            /* Sem mudanca de chave primaria */
-            return;
-        default:
-            printf("ERRO\n");
-            return;
+    int op,arq = -1;
+    char nomearquivo[20];
+    FILE* arquivo;
+    /* Escolhendo qual arquivo */
+    while(1){
+        printf("Escolha em qual arquivo deseja alterar:\n1 - Arquivo1\n2 - Arquivo2\n");
+        scanf("%d", &arq);
+        if (arq == 1){
+            strcpy(nomearquivo, "lista1.txt");
+            arquivo = fopen("lista1.txt", "w");
+            break;
+        }
+        else if(arq == 2){
+            strcpy(nomearquivo, "lista2.txt");
+            arquivo = fopen("lista2.txt", "w");
+            break;
+        }
     }
+    /* Escolhendo se tem mudanca de chave primaria */
+    do{
+        system("clear");
+        printf("Voce deseja alterar o arquivo com:\n0 - mudanca de chave primaria\n1 - sem mudanca de chave primaria\n");
+        scanf("%d", &op);
+    }while (op != 0 && op != 1);
+    system("clear");
+    int matricula, opcao;
+    long ref = -1;
+    Registro reg;
+    /* Analisa a matricula de entrada */
+    do{
+        system("clear");
+        printf("Digite a matricula do aluno:");
+        scanf("%d", &matricula);
+        ref = existe_matricula(matricula, arquivo);
+    }while(verifica_matricula(matricula) && ref != -1);
+    /* encaminha o ponteiro para o inicio do registro */
+    fseek(arquivo, ref ,SEEK_SET);
+    /* ler o registro */
+    ler_linha_arquivo(arquivo, &reg);
+    if(op == 0) /* Se for com mudanca de chave primaria */
+        reg = get_matricula(reg, arquivo);
+    reg = entrada_alterar(reg);/* Analisa os outros campos */
+    fseek(arquivo, ref, SEEK_SET);/* Volta o ponteiro para o comeco do registro*/
+    escreve_arquivo(arquivo, &reg);/* Escreve o registro */
+    fclose(arquivo);
 }
 
 void excluir(){
@@ -145,7 +131,8 @@ void excluir(){
         }
     }
 
-    int matricula, ref = -1;
+    int matricula;
+    long ref = -1;
     FILE* arquivo = fopen(nomearquivo, "r");
     //Analisa a matricula de entrada
     do{
@@ -232,4 +219,106 @@ void insere_registro(char nomearq[20],Registro* reg) {
         }
     }
     escreve_arquivo(arq, reg);/* Se não achar um *, escreve no final */
+}
+
+
+Registro get_nome(Registro reg){
+    printf("Digite o nome do aluno: ");
+    setbuf(stdin, 0);
+    scanf("%[^\n]s", reg.nome);
+    fflush(stdin);
+    printf("%s\n", reg.nome);
+    return reg;
+}
+
+Registro get_matricula(Registro reg, FILE* arq){
+    int cont=6;
+    char aux;
+    printf("Digite a matricula do aluno: ");
+    // Garantindo que a matricula contenha somente números
+    do {
+        if (cont != 6){
+            printf("Valor invalido, digite uma matricula de 6 numeros: ");
+        }
+        setbuf(stdin, 0);
+        scanf("%[^\n]s", reg.matric);
+        fflush(stdin);
+        //fgets(reg.matric, 7, stdin);
+        while(isalpha(reg.matric[0]) || isalpha(reg.matric[1]) || isalpha(reg.matric[2]) || isalpha(reg.matric[3]) ||
+              isalpha(reg.matric[4]) || isalpha(reg.matric[5])) {
+            printf("Valor invalido, digite apenas numeros: ");
+            scanf("%s", reg.matric);
+        }
+        cont = strlen(reg.matric);
+
+    } while(cont != 6);
+
+    printf("%s\n", reg.matric);
+    return reg;
+}
+
+Registro get_curso(Registro reg){
+    strcpy(reg.curso,"WC");
+    do {
+        if (!isupper(reg.curso[0]) || !isupper(reg.curso[1])){
+            printf("O curso deve conter todas as letras maiusculas! Digite novamente: ");
+        }
+        printf("Digite o curso: ");
+        setbuf(stdin, 0);
+        scanf("%c%c", &reg.curso[0],&reg.curso[1]);
+        fflush(stdin);
+    } while(!isupper(reg.curso[0]) || !isupper(reg.curso[1]));
+    printf("%s\n", reg.curso);
+    return reg;
+}
+
+Registro get_op(Registro reg){
+    printf("Digite a OP:");
+    setbuf(stdin, 0);
+    scanf("%d", &reg.op);
+    printf("%d\n", reg.op);
+    return reg;
+}
+
+Registro get_turma(Registro reg){
+    strcpy(&reg.turma,"P");
+    do {
+        printf("Digite a turma: ");
+        setbuf(stdin, 0);
+        scanf("%c", &reg.turma);
+        if (islower(reg.turma)){
+            printf("A letra da turma deve ser em letra maiuscula! Digite novamente: ");
+        }
+    } while(islower(reg.turma));
+    printf("%c\n", reg.turma);
+    return reg;
+
+}
+
+Registro entrada_alterar(Registro reg){
+    int opcao;
+    /* Nome */
+    printf("Deseja alterar o nome?\n1 - Sim\n0 - Nao\n");
+    scanf("%d", &opcao);
+    if(opcao == 1)
+        reg = get_nome(reg);
+
+    /* OP */
+    printf("Deseja alterar a op?\n1 - Sim\n0 - Nao\n");
+    scanf("%d", &opcao);
+    if(opcao == 1)
+        reg = get_op(reg);
+
+    /* Curso*/
+    printf("Deseja alterar o Curso ?\n1 - Sim\n0 - Nao\n");
+    scanf("%d", &opcao);
+    if(opcao == 1)
+        reg = get_curso(reg);
+
+    /* Turma  */
+    printf("Deseja alterar a turma?\n1 - Sim\n0 - Nao\n");
+    scanf("%d", &opcao);
+    if(opcao == 1)
+        reg = get_turma(reg);
+    return reg;
 }

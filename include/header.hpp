@@ -19,6 +19,8 @@ typedef struct registro{
 void ler_linha_arquivo(FILE* arq, Registro* reg);
 
 /* Interface */
+void visualizar();
+
 void incluir();
 
 void excluir();
@@ -45,6 +47,7 @@ Registro get_op(Registro reg);
 
 Registro get_turma(Registro reg);
 
+Registro entrada_alterar(Registro reg);
 int is_num(char numero[10], int max_len);
 /* Arquivo Secundario */
 int verifica_curso_novo(Lista* liscurso, char curso[8]);

@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include "../include/header.hpp"
 int main(){
-	char op;
+	int op;
 	/* Gera as o indice primario */
     FILE *arq1 = fopen("lista1.txt", "r");
     FILE *arq2 = fopen("lista2.txt", "r");
@@ -16,8 +16,9 @@ int main(){
 
 	while(1){
 		printf("Digite a opção que deseja realizar:\n");
-		printf("\t0 - Incluir\n\t1 - Atualizar\n\t2 - Remover\n\t3 - Visualizar\n\t9 - Sair");
-		scanf("%c", &op);
+		printf("0 - Incluir\n1 - Atualizar\n2 - Remover\n3 - Visualizar\n9 - Sair\n");
+		fflush(stdin);
+		scanf("%d", &op);
 		switch(op){
 			/* Incluir */
 			case 0:
@@ -35,6 +36,7 @@ int main(){
 
 			/* Visualizar */
 			case 3:
+				visualizar();
 				break;
 
 			/* Condição de saida*/

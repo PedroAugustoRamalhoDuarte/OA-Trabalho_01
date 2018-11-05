@@ -258,32 +258,32 @@ source/lista.cpp.s:
 	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/lista.cpp.s
 .PHONY : source/lista.cpp.s
 
-source/main.o: source/main.c.o
+source/main.o: source/main.cpp.o
 
 .PHONY : source/main.o
 
 # target to build an object file
-source/main.c.o:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/main.c.o
-.PHONY : source/main.c.o
+source/main.cpp.o:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/main.cpp.o
+.PHONY : source/main.cpp.o
 
-source/main.i: source/main.c.i
+source/main.i: source/main.cpp.i
 
 .PHONY : source/main.i
 
 # target to preprocess a source file
-source/main.c.i:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/main.c.i
-.PHONY : source/main.c.i
+source/main.cpp.i:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/main.cpp.i
+.PHONY : source/main.cpp.i
 
-source/main.s: source/main.c.s
+source/main.s: source/main.cpp.s
 
 .PHONY : source/main.s
 
 # target to generate assembly for a file
-source/main.c.s:
-	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/main.c.s
-.PHONY : source/main.c.s
+source/main.cpp.s:
+	$(MAKE) -f CMakeFiles/Trabalho_01.dir/build.make CMakeFiles/Trabalho_01.dir/source/main.cpp.s
+.PHONY : source/main.cpp.s
 
 source/ordenacao.o: source/ordenacao.cpp.o
 

@@ -22,7 +22,7 @@ add_executable(Trabalho_01
         source/lista1.txt
         source/lista12.txt
         source/lista2.txt
-        source/main.c
+        source/main.cpp
         source/makefile
         source/teste_inter.cpp
         source/indiceprimario.cpp

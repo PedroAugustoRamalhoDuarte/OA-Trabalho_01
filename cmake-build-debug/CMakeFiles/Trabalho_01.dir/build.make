@@ -96,18 +96,18 @@ CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/intercalacao.cpp -o CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.s
 
-CMakeFiles/Trabalho_01.dir/source/main.c.o: CMakeFiles/Trabalho_01.dir/flags.make
-CMakeFiles/Trabalho_01.dir/source/main.c.o: ../source/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Trabalho_01.dir/source/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/main.c.o   -c /home/pedro/UNB/OA/Trabalho_01/source/main.c
+CMakeFiles/Trabalho_01.dir/source/main.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
+CMakeFiles/Trabalho_01.dir/source/main.cpp.o: ../source/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/UNB/OA/Trabalho_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Trabalho_01.dir/source/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Trabalho_01.dir/source/main.cpp.o -c /home/pedro/UNB/OA/Trabalho_01/source/main.cpp
 
-CMakeFiles/Trabalho_01.dir/source/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_01.dir/source/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/main.c > CMakeFiles/Trabalho_01.dir/source/main.c.i
+CMakeFiles/Trabalho_01.dir/source/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trabalho_01.dir/source/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/UNB/OA/Trabalho_01/source/main.cpp > CMakeFiles/Trabalho_01.dir/source/main.cpp.i
 
-CMakeFiles/Trabalho_01.dir/source/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_01.dir/source/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/main.c -o CMakeFiles/Trabalho_01.dir/source/main.c.s
+CMakeFiles/Trabalho_01.dir/source/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trabalho_01.dir/source/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/UNB/OA/Trabalho_01/source/main.cpp -o CMakeFiles/Trabalho_01.dir/source/main.cpp.s
 
 CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.o: CMakeFiles/Trabalho_01.dir/flags.make
 CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.o: ../source/teste_inter.cpp
@@ -166,7 +166,7 @@ Trabalho_01_OBJECTS = \
 "CMakeFiles/Trabalho_01.dir/source/interface.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.o" \
-"CMakeFiles/Trabalho_01.dir/source/main.c.o" \
+"CMakeFiles/Trabalho_01.dir/source/main.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o" \
 "CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o" \
@@ -181,7 +181,7 @@ Trabalho_01_EXTERNAL_OBJECTS = \
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/interface.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/indicesecundario.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/intercalacao.cpp.o
-Trabalho_01: CMakeFiles/Trabalho_01.dir/source/main.c.o
+Trabalho_01: CMakeFiles/Trabalho_01.dir/source/main.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/teste_inter.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/indiceprimario.cpp.o
 Trabalho_01: CMakeFiles/Trabalho_01.dir/source/ordenacao.cpp.o
