@@ -1,50 +1,42 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include "intercalacao.cpp"
+#include <../include/header.hpp>
 
-
-void ordena_indice_primario(FILE *arq){
-	char aux[30], indice[30];
-	int i =0, j, k, w, aux2;
-	Registro reg[100];
-	while (!feof(arq)){
-		/* Captura o indice primario */
-		fscanf(arq, "%s", indice); // Lê o indice primário
-		strcpy(reg[i].chave, indice); // Atribui o indice primário à um vetor de struct
-		fscanf(arq, "%s", aux); // Pega a referência
-		reg[i].ref = atoi(aux);
-	    printf("%s\t", reg[i].chave);
-	    printf("%d\n", reg[i].ref);
-	    fgetc(arq); /* Pegar o espaço que sobra */
-	    i++;
-
+void ordena_arquivo(FILE* arq, int flag){
+	int tam = calcularRegistroArquivo(arq), i;
+	Registro reg[tam];
+	bubble_sort(reg[tam], flag, tam);
+	for(i = 0; i < tam; i++){
+		escreve_arquivo(arq, &reg[i]);
 	}
-	for(j = 1; j < i; j++){
-        for (k = 0; k < i-1; k++){
-            if(strcmp(reg[k].chave,reg[k+1].chave) > 0){
-            		//Ordenando as chaves
-                	strcpy(aux,reg[k].chave);
-                 	strcpy(reg[k].chave,reg[k+1].chave);
-                 	strcpy(reg[k+1].chave,aux);
-
-                 	// Ordenando as referências
-                 	aux2 = reg[k].ref;
-                 	reg[k].ref = reg[k+1].ref;
-                 	reg[k+1].ref = aux2;
-                 }                               
-           	}      
-        }
-    printf("\nOrdenado\n");
-    for(w = 0; w < i; w++){
-    	printf("%s\t", reg[w].chave);
-	    printf("%d\n", reg[w].ref);
-
-    }
+	fclose(arq);
 }
-int main(){
-	FILE *arq1 = fopen("testeordenacao.txt", "r");
-	ordena_indice_primario(arq1);
 
-
+/* Se flag != -1, ordena crescrente
+* Se flag == -1 ordena descrecente*/
+Registro* bubble_sort(Registro* reg, int flag, int tam){
+	Registro aux;
+	int j, k;
+	for(j = 1; j < tam; j++){
+		for (k = 0; k < tam - 1; k++){
+			if(flag != - 1){
+				/* Ordem Crescente */
+				if(strcmp(reg[k].chave,reg[k+1].chave) > 0){
+					//Ordenando as chaves
+					aux = reg[k];
+					reg[k] = reg[k + 1];
+					reg[k + 1] = aux;
+				}
+			}else{
+				/* Ordena Decrescente */
+				if(strcmp(reg[k].chave,reg[k+1].chave) < 0){
+					//Ordenando as chaves
+					aux = reg[k];
+					reg[k] = reg[k + 1];
+					reg[k + 1] = aux;
+				}
+			}
+		}
+	}
 }

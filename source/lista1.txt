@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-321132 Pedro Augusto                            0  ED       D
-=======
-024312 Leonardo Nunes de Souza                  32  EC       A
-031272 Andreza Pollyana da Silva                32  EC       A
 035830 Rogerio Augusto de Castro Neves          37  EC       A
 041881 Ana Luisa Costa Miguel                   34  CC       A
 042290 Bruno Filipe Milare de Macedo            34  EC       A
@@ -20,4 +15,5 @@
 046946 Vitor Bruno Jacintho de Almeida          34  EC       A
 046956 Vitor Gouvea Franchi                     34  EC       A
 046961 Vitor Paulo Villarino Pinto              32  EC       A
->>>>>>> parent of 9ffaae0... Alterar brabissimo
+071231 Pedro Augusto                            32  EC       A 
+103928 WAliff PEDRO                             24  EC       A 

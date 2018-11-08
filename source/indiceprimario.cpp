@@ -35,10 +35,15 @@ void cria_indice_primario(FILE *arq, const char* nomelista){
 	FILE *arqindice = fopen(nomelista, "w+");
 	Registro reg;
 	int ref = 1;
+	int contador = 0;
+	long max_reg = calcularRegistroArquivo(arq);
 	while(!feof(arq)){
 		ler_linha_arquivo(arq, &reg);
 		// Referencia criada para somar a quantidade de bits das linhas
-		ref = printa_indice_invertido(arqindice, reg, ref);
+		contador ++;
+		if(max_reg == contador){
+			break;
+		}
 	}
 }
 

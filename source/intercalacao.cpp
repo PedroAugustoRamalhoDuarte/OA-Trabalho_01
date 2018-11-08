@@ -46,6 +46,7 @@ void ler_linha_arquivo(FILE* arq, Registro *reg){
   	reg->turma = fgetc(arq);
   	/* Definindo a chave */
   	get_chave(reg);
+  	fgetc(arq);
 }
 
 int merge(char*  arquivo1, char*  arquivo2){
