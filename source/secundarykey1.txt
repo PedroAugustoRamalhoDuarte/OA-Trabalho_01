@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 ED       1
+=======
+CC       7
+EC       19
+EM       12
+>>>>>>> parent of 9ffaae0... Alterar brabissimo

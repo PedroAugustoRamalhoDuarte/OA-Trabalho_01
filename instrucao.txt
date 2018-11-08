@@ -1,37 +1,35 @@
 Alunos: Pedro Augusto Ramalho Duarte 170163717
-		Wallif Cordeiro Bandeira 17011
+		Wallif Cordeiro Bandeira
 
-    switch (op){
-        case 0:
-            /* Com mudanca de chave primaria */
-            //Analisa a matricula de entrada
-            do{
-                system("clear");
-                printf("Digite a matricula do aluno:");
-                scanf("%d", &matricula);
-                ref = existe_matricula(matricula, arquivo);
-            }while(verifica_matricula(matricula) && ref != -1);
-            fseek(arquivo, ref ,SEEK_SET);
-            ler_linha_arquivo(arquivo, &reg);
-            reg = get_matricula(reg, arquivo);
-            reg = entrada_alterar(reg);
-            fseek(arquivo, ref, SEEK_SET);
-            escreve_arquivo(arquivo, &reg);
-            fclose(arquivo);
-            return;
-        case 1:
-            /* Sem mudanca de chave primaria */
-            //Analisa a matricula de entrada
-            do{
-                system("clear");
-                printf("Digite a matricula do aluno:");
-                scanf("%d", &matricula);
-                ref = existe_matricula(matricula, arquivo);
-            }while(verifica_matricula(matricula) && ref != -1);
-            fseek(arquivo, ref ,SEEK_SET);
-            ler_linha_arquivo(arquivo, &reg);
-            reg = entrada_alterar(reg);
-            return;
-        default:
-            printf("ERRO\n");
+
+
+		    //Gerar nome dos arquivos de indice
+            /* Arquivo com numero de 0 a 9 */
+            char nomeinv[30] = "listainv .txt";
+            char nomesec[30] = "secundarykey .txt";
+            char nomepri[30] = "indicelista .ind";
+            /* Definindo nome dos arquivos de saida */
+            for (int i = 0; i < 30; ++i) {
+                if ('0' <= nomearquivo[i]  && nomearquivo[i] <= '9') {
+                    /* Coloca o numero do arquivo invertido */
+                    nomeinv[8] = nomearquivo[i];
+                    nomesec[12] = nomearquivo[i];
+                    nomepri[11] = nomearquivo[i];
+                    break;
+                }
+            }
+
+
+    /* Excluindo do arquivo primario */
+    while(!feof(arq)){/* Enquanto o arquivo tem registros*/
+        long posicaoAtual = ftell(arq);
+        char aux[10];
+        fscanf(arq, "%[0-9]s", aux);
+        if(atoi(aux) == matricula){/* Se a matricula for igual a matricula do registro */
+            fseek(arq, posicaoAtual, SEEK_SET);/* Volta para o comeco da linha */
+            fprintf(arq,"%-62s\n", remove);
+            break;
+        }
+        fscanf(arq, "%[^\n]s", aux); /* Captura o restante da lista */
+        fgetc(arq); /* Captura o \n */
     }

@@ -140,7 +140,7 @@
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/lista2.txt">
 			<Option target="Trabalho_01"/>
 		</Unit>
-		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/main.cpp">
+		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/main.c">
 			<Option target="Trabalho_01"/>
 		</Unit>
 		<Unit filename="/home/pedro/UNB/OA/Trabalho_01/source/makefile">

@@ -1,2 +1,25 @@
+<<<<<<< HEAD
 321132Pedro                    -1
 321132Pedro                    0
+=======
+024312Leonardo                 -1
+031272Andreza                  0
+035830Rogerio                  1
+041881Ana                      -1
+042290Bruno                    2
+042780Daniel                   4
+042865Danilo                   3
+043217Erikita                  6
+043341Fabricio                 5
+044072Igor                     8
+045058Marcio                   9
+046306Rodrigo                  10
+046708Thiago                   -1
+046713Thiago                   11
+046802Tiago                    13
+046944Vitor                    14
+046946Vitor                    15
+046956Vitor                    16
+046961Vitor                    17
+046961Vitor                    18
+>>>>>>> parent of 9ffaae0... Alterar brabissimo
