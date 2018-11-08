@@ -23,15 +23,20 @@ void visualizar(){
             break;
         }
     }
-    char texto[5000];
+    Registro reg;
+    int contador = 0;
+    long max_reg = calcularRegistroArquivo(arquivo);
     while(!feof(arquivo)){
-        texto[i] = fgetc(arquivo);
-        printf("%c", texto[i]);
-        i++;
+        ler_linha_arquivo(arquivo, &reg);
+        printf("%s %-40s %d  %-8s %c \n", reg.matric,reg.nome,reg.op,reg.curso,reg.turma);
+        contador ++;
+        if(max_reg == contador){
+            break;
+        }
     }
-    printf("%s",texto);
-    getc(stdin);
+    getc(stdin);/* esperar o cara digitar */
 }
+
 void incluir(){
 	int arq;
 	FILE* arquivo;
@@ -57,8 +62,8 @@ void incluir(){
     reg = get_matricula(reg, arquivo);
 	reg = get_nome(reg);
 	reg = get_op(reg);
+    reg = get_turma(reg);
     reg = get_curso(reg);
-	reg = get_turma(reg);
     printf("%s %-40s %d  %-8s %c \n", reg.matric,reg.nome,reg.op,reg.curso,reg.turma);
 	fclose(arquivo);
 	/* Insere o registro na lista */
@@ -119,7 +124,7 @@ void excluir(){
     char nomearquivo[20];
     //Escolhe de qual arquivo o usuario deseja remover
     while(1){
-        printf("Escolha em qual arquivo deseja excluir:\n\t1 - Arquivo1\n\t2 - Arquivo2");
+        printf("Escolha em qual arquivo deseja excluir:\n1 - Arquivo1\n2 - Arquivo2\n");
         scanf("%d", &arq);
         if (arq == 1){
             strcpy(nomearquivo,"lista1.txt");
@@ -146,7 +151,6 @@ void excluir(){
     // excluir_registro(nomearquivo, matricula);
 
 }
-
 
 /* ***********************************************************************
  * Função Existe_matricula
@@ -221,7 +225,6 @@ void insere_registro(char nomearq[20],Registro* reg) {
     escreve_arquivo(arq, reg);/* Se não achar um *, escreve no final */
 }
 
-
 Registro get_nome(Registro reg){
     printf("Digite o nome do aluno: ");
     setbuf(stdin, 0);
@@ -265,7 +268,7 @@ Registro get_curso(Registro reg){
         }
         printf("Digite o curso: ");
         setbuf(stdin, 0);
-        scanf("%c%c", &reg.curso[0],&reg.curso[1]);
+        scanf("%s", reg.curso);
         fflush(stdin);
     } while(!isupper(reg.curso[0]) || !isupper(reg.curso[1]));
     printf("%s\n", reg.curso);
@@ -285,7 +288,7 @@ Registro get_turma(Registro reg){
     do {
         printf("Digite a turma: ");
         setbuf(stdin, 0);
-        scanf("%c", &reg.turma);
+        scanf("%s", &reg.turma);
         if (islower(reg.turma)){
             printf("A letra da turma deve ser em letra maiuscula! Digite novamente: ");
         }

@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 #include "../include/header.hpp"
 int main(){
 	int op;
@@ -15,6 +16,9 @@ int main(){
 	fclose(arq2);
 
 	while(1){
+		printf("Aperte qualquer tecla para continuar\n");
+		getc(stdin);
+	    system("clear");
 		printf("Digite a opção que deseja realizar:\n");
 		printf("0 - Incluir\n1 - Atualizar\n2 - Remover\n3 - Visualizar\n9 - Sair\n");
 		fflush(stdin);
