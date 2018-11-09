@@ -119,6 +119,7 @@ void excluir(){
         scanf("%d", &matricula);
         fflush(stdin);
         ref = existe_matricula(matricula, arquivo);
+        printf("\n%d\n", ref);
     }while(ref == -1);
     fclose(arquivo);
 
@@ -130,12 +131,12 @@ void excluir(){
 long existe_matricula(int matricula, FILE* arq){
     Registro reg;
     long posicaoAtual = ftell(arq);
-    long cont = 0;
+    int cont = 0;
     while(!feof(arq)){
         ler_linha_arquivo(arq, &reg);
         if(atoi(reg.matric) == matricula){
             printf("Matricula existente\n");
-            return cont * TAM_REG;
+            return cont * 63;
         }
         cont++;
     }

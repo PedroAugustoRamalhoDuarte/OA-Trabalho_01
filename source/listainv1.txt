@@ -1,6 +1,6 @@
-071231Pedro                    -1
-103928WAliff                   0
-046802Tiago                    1
+123123Pedro                    -1
+123123Pedro                    0
+6802                           1
 046944Vitor                    2
 046946Vitor                    3
 046956Vitor                    4
