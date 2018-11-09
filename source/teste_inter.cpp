@@ -59,7 +59,7 @@ TEST_CASE("Existe registro"){
     fclose(arq);
 }*/
 
-TEST_CASE("Inserir Registro"){
+/*TEST_CASE("Inserir Registro"){
 	Registro reg;
 	strcpy(reg.matric, "071231");
 	strcpy(reg.nome, "Pedro Augusto");
@@ -68,7 +68,7 @@ TEST_CASE("Inserir Registro"){
 	reg.turma = 'A';
 
 	insere_registro(string1, &reg);
-}
+}*/
 /*
 TEST_CASE("Excluir Registro"){
     excluir_registro(string1, 024312, 0);

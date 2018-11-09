@@ -24,8 +24,18 @@ void escreve_arquivo(FILE* arq, Registro* reg){
 	fprintf(arq, "%s %-40s %d  %-8s %c \n", reg->matric,reg->nome,reg->op,reg->curso,reg->turma);
 }
 void ler_linha_arquivo(FILE* arq, Registro *reg){
-	char aux[30];
-
+	char aux[70], a;
+	/* Se o primeiro caracter for um * */
+    long posicaoInicial = ftell(arq);
+    a = fgetc(arq);
+    if(a == '*') {
+        strcpy(reg->matric, "-1");
+        fscanf(arq, "%[^\n]s", aux);
+        fgetc(arq);
+        if(!feof(arq))
+            ler_linha_arquivo(arq, reg);
+    }
+    fseek(arq, posicaoInicial, SEEK_SET);
 	/* Captura a matricula */
 	fscanf(arq, "%s", reg->matric);
     fgetc(arq); /* Pegar o espaço que sobra */

@@ -19,6 +19,7 @@ void visualizar(){
             arquivo = fopen("lista2.txt", "r");
             break;
         }else if(arq == 3){
+            merge("lista1.txt", "lista2.txt");
             arquivo = fopen("lista12.txt", "r");
             break;
         }
@@ -111,29 +112,21 @@ void excluir(){
     int matricula, ref = -1;
     FILE* arquivo = fopen(nomearquivo, "r");
     //Analisa a matricula de entrada
+    system("clear");
     do{
-        system("clear");
         printf("Digite a matricula do aluno:");
+        fflush(stdin);
         scanf("%d", &matricula);
+        fflush(stdin);
         ref = existe_matricula(matricula, arquivo);
-    }while(verifica_matricula(matricula) && ref != -1);
+    }while(ref == -1);
     fclose(arquivo);
 
-    // excluir_registro(nomearquivo, matricula);
+    excluir_registro(nomearquivo, matricula, ref);
+    getc(stdin);
 
 }
 
-/* ***********************************************************************
- * Função Existe_matricula
- *
- * Entrada:
- *  -matricula: matricula na qual va ser pesquisada
- *  -arq: ponteiro do arquivo no qual sera pesquisado se esxiste a matricula
- * Retorno:
- *  -referencia: Se existir retorna o endereço
- *  - -1: Se nao encontrou
- *
- ***************************************************************************/
 long existe_matricula(int matricula, FILE* arq){
     Registro reg;
     long posicaoAtual = ftell(arq);
@@ -141,39 +134,29 @@ long existe_matricula(int matricula, FILE* arq){
     while(!feof(arq)){
         ler_linha_arquivo(arq, &reg);
         if(atoi(reg.matric) == matricula){
+            printf("Matricula existente\n");
             return cont * TAM_REG;
         }
         cont++;
     }
     fseek(arq, posicaoAtual, SEEK_SET); /* Volta o ponteiro do arquivo para onde estava */
+    printf("Matricula não existente\n");
     return -1;
 }
 
-/***********************************************
- * Função Exclui Registro
- * @details A função atribui um * para o registro no arquivo principal.
- * @param nomearquivo: Nome do arquivo ter conehcimento de qual lista retirar
- * @param matricula: Matricula do qual sera retirado
- * @param ref: referencia do aluno no arquivo principal
- *
- * @return void
- */
 void excluir_registro(char nomearquivo[20], int matricula, long ref){
     FILE* arq = fopen(nomearquivo, "r+");
     Registro reg;
     /* Excluindo no arquivo principal */
     fseek(arq, ref, SEEK_SET);
-    //ler_linha_arquivo(arq, &reg);/* Captura informação do registro para usar depois */
-    //fseek(arq, ref, SEEK_SET);
-    char remove[2] = "*";
-    fprintf(arq,"%-62s\n", remove);
+    fprintf(arq,"*");
+    for (int i = 0; i < 61; i++){
+        fprintf(arq," ");
+    }
+    fprintf(arq,"\n");
 
 
     fclose(arq);
-}
-
-int verifica_matricula(int matricula){
-
 }
 
 void insere_registro(char nomearq[20],Registro* reg) {
